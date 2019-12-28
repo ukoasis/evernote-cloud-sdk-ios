@@ -138,6 +138,9 @@ NSString * ENOAuthAuthenticatorAuthInfoAppNotebookIsLinked = @"ENOAuthAuthentica
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.authenticationViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     }
+    if (@available(iOS 13.0, *)) {
+        self.authenticationViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    }
     [self.hostViewController presentViewController:self.authenticationViewController animated:YES completion:nil];
     
     // Start bootstrapping
